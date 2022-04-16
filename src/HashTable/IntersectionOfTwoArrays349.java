@@ -13,12 +13,12 @@ public class IntersectionOfTwoArrays349 {
         int s2Length = nums2.length;
         List<Integer> array = new ArrayList<>();
         HashSet<Integer> set = new HashSet<>();
-        for (int i=0;i<s1Length;i++){
-                set.add(nums1[i]);
+        for (int k : nums1) {
+            set.add(k);
         }
-        for (int j=0;j<s2Length;j++){
-            if (set.contains(nums2[j]))
-                    array.add(nums2[j]);
+        for (int i : nums2) {
+            if (set.contains(i))
+                array.add(i);
         }
         int[] result = new int[array.size()];
         int count = 0;
