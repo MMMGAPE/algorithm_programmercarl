@@ -1,9 +1,6 @@
 package HashTable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class IntersectionOfTwoArrays349 {
     public static void main(String[] args) {
@@ -15,17 +12,13 @@ public class IntersectionOfTwoArrays349 {
         int s1Length = nums1.length;
         int s2Length = nums2.length;
         List<Integer> array = new ArrayList<>();
-        HashMap<Integer,Boolean> map = new HashMap<>();
+        HashSet<Integer> set = new HashSet<>();
         for (int i=0;i<s1Length;i++){
-            if (!map.containsKey(nums1[i]))
-                map.put(nums1[i],Boolean.FALSE);
+                set.add(nums1[i]);
         }
         for (int j=0;j<s2Length;j++){
-            if (map.containsKey(nums2[j]))
-                if (map.get(nums2[j]).equals(Boolean.FALSE)){
-                    map.put(nums2[j],Boolean.TRUE);
+            if (set.contains(nums2[j]))
                     array.add(nums2[j]);
-                }
         }
         int[] result = new int[array.size()];
         int count = 0;
