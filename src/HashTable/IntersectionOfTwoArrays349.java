@@ -9,8 +9,6 @@ public class IntersectionOfTwoArrays349 {
         System.out.println(Arrays.toString(intersection(a, b)));
     }
     public static int[] intersection(int[] nums1, int[] nums2) {
-        int s1Length = nums1.length;
-        int s2Length = nums2.length;
         List<Integer> array = new ArrayList<>();
         HashSet<Integer> set = new HashSet<>();
         for (int k : nums1) {

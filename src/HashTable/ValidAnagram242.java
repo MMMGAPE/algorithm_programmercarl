@@ -6,7 +6,6 @@ public class ValidAnagram242 {
         String secondString = "gramana";
 
         System.out.println(isAnagramWithBaseDataType(firstString,secondString));
-
     }
 
     /**
