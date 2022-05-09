@@ -1,15 +1,13 @@
 package BinaryTree;
 
-import java.util.TreeMap;
-
-public class BinaryTree<V> {
+public class TreeNode<V> {
     V value;
-    BinaryTree<V> leftNode;
-    BinaryTree<V> rightNode;
-    public BinaryTree(V value){
+    TreeNode<V> leftNode;
+    TreeNode<V> rightNode;
+    public TreeNode(V value){
         this.value = value;
     }
-    public BinaryTree(V value, BinaryTree<V> leftNode,BinaryTree<V> rightNode){
+    public TreeNode(V value, TreeNode<V> leftNode, TreeNode<V> rightNode){
         this.value = value;
         this.leftNode = leftNode;
         this.rightNode = rightNode;
@@ -23,10 +21,10 @@ public class BinaryTree<V> {
     public V getRightValue(){
         return this.rightNode.getValue();
     }
-    public BinaryTree<V> getLeftNode(){
+    public TreeNode<V> getLeftNode(){
         return this.leftNode;
     }
-    public BinaryTree<V> getRightNode(){
+    public TreeNode<V> getRightNode(){
         return this.rightNode;
     }
     public void setValue(V value){
