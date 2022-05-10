@@ -1,33 +1,33 @@
 package BinaryTree;
 
-public class TreeNode<V> {
-    V value;
-    TreeNode<V> leftNode;
-    TreeNode<V> rightNode;
-    public TreeNode(V value){
+public class TreeNode<T> {
+    T value;
+    TreeNode<T> leftNode;
+    TreeNode<T> rightNode;
+    public TreeNode(T value){
         this.value = value;
     }
-    public TreeNode(V value, TreeNode<V> leftNode, TreeNode<V> rightNode){
+    public TreeNode(T value, TreeNode<T> leftNode, TreeNode<T> rightNode){
         this.value = value;
         this.leftNode = leftNode;
         this.rightNode = rightNode;
     }
-    public V getValue(){
+    public T getValue(){
         return this.value;
     }
-    public V getLeftValue(){
+    public T getLeftValue(){
         return this.leftNode.getValue();
     }
-    public V getRightValue(){
+    public T getRightValue(){
         return this.rightNode.getValue();
     }
-    public TreeNode<V> getLeftNode(){
+    public TreeNode<T> getLeftNode(){
         return this.leftNode;
     }
-    public TreeNode<V> getRightNode(){
+    public TreeNode<T> getRightNode(){
         return this.rightNode;
     }
-    public void setValue(V value){
+    public void setValue(T value){
         this.value=value;
     }
 }
