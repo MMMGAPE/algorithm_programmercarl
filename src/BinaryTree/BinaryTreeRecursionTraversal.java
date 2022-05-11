@@ -15,6 +15,9 @@ public class BinaryTreeRecursionTraversal<T>{
             case priority:
                 preorder(rootNode,result);
             case intermediate:
+                intermediate(rootNode,result);
+            case rear:
+                rear(rootNode,result);
         }
 
         return result;
