@@ -3,12 +3,12 @@ package BinaryTree;
 import java.util.*;
 
 public class FindBottomLeftTreeValue513 {
-    public int findBottomLeftValue(TreeNodeSample root) {
+    public int findBottomLeftValue(TreeNode root) {
         PriorityQueue<Map.Entry<Integer,Integer>> pq = new PriorityQueue<>((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
         BottomLeftValue(root,pq,0);
         return pq.peek().getKey();
     }
-    public void BottomLeftValue(TreeNodeSample node,PriorityQueue<Map.Entry<Integer,Integer>> pq,int level){
+    public void BottomLeftValue(TreeNode node, PriorityQueue<Map.Entry<Integer,Integer>> pq, int level){
         if (node!=null){
             level++;
             if (node.left!=null){

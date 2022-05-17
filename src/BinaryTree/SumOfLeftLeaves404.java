@@ -1,10 +1,10 @@
 package BinaryTree;
 
 public class SumOfLeftLeaves404 {
-    public int sumOfLeftLeaves(TreeNodeSample root) {
+    public int sumOfLeftLeaves(TreeNode root) {
         return sumLeftLeaves(root,0,"root");
     }
-    public int sumLeftLeaves(TreeNodeSample node,int sum,String type){
+    public int sumLeftLeaves(TreeNode node, int sum, String type){
         if (node == null){
             return 0;
         }else {

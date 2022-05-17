@@ -1,10 +1,10 @@
 package BinaryTree;
 
 public class CountCompleteTreeNodes222 {
-    public int countNodes(TreeNodeSample root) {
+    public int countNodes(TreeNode root) {
         return getCount(root);
     }
-    public int getCount(TreeNodeSample node){
+    public int getCount(TreeNode node){
         if (node == null) return 0;
         int leftCount = getCount(node.left);
         int rightCount = getCount(node.right);

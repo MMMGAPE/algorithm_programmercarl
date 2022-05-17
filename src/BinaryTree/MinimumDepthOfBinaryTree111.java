@@ -1,10 +1,10 @@
 package BinaryTree;
 
 public class MinimumDepthOfBinaryTree111 {
-    public int minDepth(TreeNodeSample root) {
+    public int minDepth(TreeNode root) {
         return getMinDepth(root);
     }
-    public int getMinDepth(TreeNodeSample node){
+    public int getMinDepth(TreeNode node){
         if (node == null) {
             return 0;
         }

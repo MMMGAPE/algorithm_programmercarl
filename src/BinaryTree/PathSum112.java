@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PathSum112 {
-    public boolean hasPathSum(TreeNodeSample root, int targetSum) {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
         List<Integer> sumList = new ArrayList<>();
         getSumList(root,sumList,0);
         return sumList.contains(targetSum);
     }
-    public void getSumList(TreeNodeSample node,List<Integer> sumList,int perSum){
+    public void getSumList(TreeNode node, List<Integer> sumList, int perSum){
         if(node!=null){
             perSum = perSum+node.val;
             if (node.left!=null){

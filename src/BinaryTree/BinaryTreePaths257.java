@@ -2,14 +2,13 @@ package BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class BinaryTreePaths257 {
-    public List<String> binaryTreePaths(TreeNodeSample root) {
+    public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<>();
         return preOrder(root,result,"");
     }
-    public List<String> preOrder(TreeNodeSample root,List<String> result,String subResult){
+    public List<String> preOrder(TreeNode root, List<String> result, String subResult){
         if (root == null){
             return result;
         }else{

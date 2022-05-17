@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class BinaryTreeUnionTraversal<T> {
+public class BinaryTreeUnionTraversal {
     enum traversalType{
         priority,intermediate,rear
     }
-    public List<T> preorderTraversal(TreeNode<T> rootNode,traversalType type){
-        List<T> result = new ArrayList<>();
-        Stack<TreeNode<T>> stack = new Stack<>();
+    public List<Integer> preorderTraversal(TreeNode rootNode, traversalType type){
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
         if (rootNode==null){
             return result;
         }else {
             stack.push(rootNode);
             while(!stack.isEmpty()){
-                TreeNode<T> stackTopNode = stack.peek();
+                TreeNode stackTopNode = stack.peek();
                 if (stackTopNode!=null){
                     //前序遍历
                     if (type == traversalType.priority){
                         stack.pop();
-                        if (stackTopNode.rightNode!=null){
-                            stack.push(stackTopNode.rightNode);
+                        if (stackTopNode.right!=null){
+                            stack.push(stackTopNode.right);
                         }
-                        if (stackTopNode.leftNode != null){
-                            stack.push(stackTopNode.leftNode);
+                        if (stackTopNode.left != null){
+                            stack.push(stackTopNode.left);
                         }
                         stack.push(stackTopNode);
                         stack.push(null);
@@ -33,13 +33,13 @@ public class BinaryTreeUnionTraversal<T> {
                     //中序遍历
                     if (type == traversalType.priority){
                         stack.pop();
-                        if (stackTopNode.rightNode!=null){
-                            stack.push(stackTopNode.rightNode);
+                        if (stackTopNode.right!=null){
+                            stack.push(stackTopNode.right);
                         }
                         stack.push(stackTopNode);
                         stack.push(null);
-                        if (stackTopNode.leftNode != null){
-                            stack.push(stackTopNode.leftNode);
+                        if (stackTopNode.left != null){
+                            stack.push(stackTopNode.left);
                         }
                     }
                     //后序遍历
@@ -47,17 +47,17 @@ public class BinaryTreeUnionTraversal<T> {
                         stack.pop();
                         stack.push(stackTopNode);
                         stack.push(null);
-                        if (stackTopNode.rightNode!=null){
-                            stack.push(stackTopNode.rightNode);
+                        if (stackTopNode.right!=null){
+                            stack.push(stackTopNode.right);
                         }
-                        if (stackTopNode.leftNode != null){
-                            stack.push(stackTopNode.leftNode);
+                        if (stackTopNode.left != null){
+                            stack.push(stackTopNode.left);
                         }
                     }
 
                 }else {
                     stack.pop();
-                    result.add(stack.pop().value);
+                    result.add(stack.pop().val);
                 }
             }
         }

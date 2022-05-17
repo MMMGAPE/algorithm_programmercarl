@@ -4,13 +4,13 @@ package BinaryTree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTreeRecursionTraversal<T>{
+public class BinaryTreeRecursionTraversal{
     enum traversalType{
         priority,intermediate,rear
     }
 
-    public List<T> traversal(TreeNode<T> rootNode,traversalType traversalType){
-        List<T> result = new ArrayList<>();
+    public List<Integer> traversal(TreeNode rootNode, traversalType traversalType){
+        List<Integer> result = new ArrayList<>();
         switch (traversalType){
             case priority:
                 preorder(rootNode,result);
@@ -23,33 +23,33 @@ public class BinaryTreeRecursionTraversal<T>{
         return result;
     }
 
-    public void preorder(TreeNode<T> node,List<T> result){
+    public void preorder(TreeNode node, List<Integer> result){
         if (node == null){
             return;
         }else{
-            result.add(node.getValue());
-            preorder(node.getLeftNode(),result);
-            preorder(node.getRightNode(),result);
+            result.add(node.val);
+            preorder(node.left,result);
+            preorder(node.right,result);
         }
     }
 
-    public void intermediate(TreeNode<T> node,List<T> result){
+    public void intermediate(TreeNode node, List<Integer> result){
         if (node == null){
             return;
         }else {
-            intermediate(node.getLeftNode(),result);
-            result.add(node.getValue());
-            intermediate(node.getRightNode(),result);
+            intermediate(node.left,result);
+            result.add(node.val);
+            intermediate(node.right,result);
         }
     }
 
-    public void rear(TreeNode<T> node,List<T> result){
+    public void rear(TreeNode node, List<Integer> result){
         if (node == null){
             return;
         }else {
-            rear(node.getLeftNode(),result);
-            rear(node.getRightNode(),result);
-            result.add(node.getValue());
+            rear(node.left,result);
+            rear(node.right,result);
+            result.add(node.val);
         }
     }
 

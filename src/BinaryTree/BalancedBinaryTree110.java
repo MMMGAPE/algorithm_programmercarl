@@ -1,9 +1,7 @@
 package BinaryTree;
 
-import java.util.Stack;
-
 public class BalancedBinaryTree110 {
-    public boolean isBalanced(TreeNodeSample root) {
+    public boolean isBalanced(TreeNode root) {
         if (root==null){
             return true;
         }else {
@@ -11,7 +9,7 @@ public class BalancedBinaryTree110 {
         }
 
     }
-    public int getDepth(TreeNodeSample node){
+    public int getDepth(TreeNode node){
         if (node == null) return 0;
         int leftDepth = getDepth(node.left);
         int rightDepth = getDepth(node.right);

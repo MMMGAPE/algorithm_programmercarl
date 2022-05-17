@@ -4,45 +4,45 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class BinaryTreeIterateTraversal<T> {
+public class BinaryTreeIterateTraversal {
 
-    public List<T> preorderTraversal(TreeNode<T> rootNode){
-        List<T> result = new ArrayList<>();
-        Stack<TreeNode<T>> stack = new Stack<>();
+    public List<Integer> preorderTraversal(TreeNode rootNode){
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
         if (rootNode==null){
             return result;
         }else {
             stack.push(rootNode);
             while(!stack.isEmpty()){
-                TreeNode<T> node = stack.pop();
-                result.add(node.getValue());
-                if (node.rightNode!=null){
-                    stack.push(node.getRightNode());
+                TreeNode node = stack.pop();
+                result.add(node.val);
+                if (node.right!=null){
+                    stack.push(node.right);
                 }
-                if (node.leftNode!=null){
-                    stack.push(node.getLeftNode());
+                if (node.left!=null){
+                    stack.push(node.left);
                 }
             }
         }
         return result;
     }
 
-    public List<T> midOrderTraversal(TreeNode<T> rootNode){
-        List<T> result = new ArrayList<>();
-        Stack<TreeNode<T>> stack = new Stack<>();
+    public List<Integer> midOrderTraversal(TreeNode rootNode){
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
         if (rootNode==null){
             return result;
         }else {
             stack.push(rootNode);
             while (!stack.isEmpty()){
-                TreeNode<T> stackTopNode = stack.peek();
-                if (stackTopNode.rightNode!=null){
-                    stack.push(stackTopNode.rightNode);
+                TreeNode stackTopNode = stack.peek();
+                if (stackTopNode.right!=null){
+                    stack.push(stackTopNode.right);
                 }else {
-                    TreeNode<T> popNode = stack.pop();
-                    result.add(popNode.value);
-                    if (popNode.leftNode != null){
-                        stack.push(popNode.leftNode);
+                    TreeNode popNode = stack.pop();
+                    result.add(popNode.val);
+                    if (popNode.left != null){
+                        stack.push(popNode.left);
                     }
                 }
             }
@@ -50,22 +50,22 @@ public class BinaryTreeIterateTraversal<T> {
         return result;
     }
 
-    public List<T> rearOrderTraversal(TreeNode<T> rootNode){
-        List<T> result = new ArrayList<>();
-        Stack<TreeNode<T>> stack = new Stack<>();
+    public List<Integer> rearOrderTraversal(TreeNode rootNode){
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
         if (rootNode==null){
             return result;
         }else{
             stack.push(rootNode);
             while (!stack.isEmpty()){
-                TreeNode<T> stackTopNode = stack.peek();
-                if (stackTopNode.rightNode!=null){
-                    stack.push(stackTopNode.rightNode);
+                TreeNode stackTopNode = stack.peek();
+                if (stackTopNode.right!=null){
+                    stack.push(stackTopNode.right);
                 }else {
-                    if (stackTopNode.leftNode != null){
-                        stack.push(stackTopNode.leftNode);
+                    if (stackTopNode.left != null){
+                        stack.push(stackTopNode.left);
                     }else {
-                        result.add(stack.pop().value);
+                        result.add(stack.pop().val);
                     }
                 }
             }
